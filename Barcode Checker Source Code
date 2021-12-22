@@ -2,7 +2,7 @@ Sub barcodeListandCheck()
 Dim X As Integer
 Dim N As Integer
 N = 4
-    For X = 2 To 92
+    For X = 2 To 93
     Set ahsNumbeR = Range("G" & X)
     Set numberPicker = Range("D" & N)
         If numberPicker > 100 Then
@@ -10,7 +10,7 @@ N = 4
         End If
     N = N + 13
     Next X
-    For I = 2 To 92
+    For I = 2 To 93
     Set patientName = Range("A" & I)
     Set matchCheck = Range("B" & I)
     Set scannedBarcodes = Range("C" & I)
