@@ -15,15 +15,17 @@ N = 4
     Set matchCheck = Range("B" & I)
     Set scannedBarcodes = Range("C" & I)
     Set pastedBarcodes = Range("G" & I)
+    Dim J As Integer
+    J = I - 1
         If scannedBarcodes = Range("F" & I) Then
-            patientName.Value = "No Patient"
+            patientName.Value = "No Patient " & J
             matchCheck.Value = "No Barcode"
         ElseIf scannedBarcodes = pastedBarcodes Then
-            patientName.Value = "Patient " & I
+            patientName.Value = "Patient " & J
             matchCheck.Value = "Barcodes match"
             Range("A" & I).Interior.ColorIndex = 4
         ElseIf scannedBarcodes <> pastedBarcodes Then
-            patientName.Value = "Patient " & I
+            patientName.Value = "Patient " & J
             matchCheck.Value = "DOES NOT MATCH"
             Range("A" & I).Interior.ColorIndex = 3
         End If
