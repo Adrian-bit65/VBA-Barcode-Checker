@@ -1,7 +1,14 @@
+' This is a function used to compare barcodes for batches that are scanned in on the Hamilton with a list pasted in from the batch list on Epic.
+' First, paste in the barcodes from the Excel file that the Hamilton makes on the green box in column C
+' Second, paste in the list from the snapshot of the batch (clicking and dragging from "1." to the end of "COVID.DL") on the green box in column D
+' Lastly, go to the Developer tab and hit "Macros" on the left-hand side, select "barcodeListandCheck", then hit Run
+
 Sub barcodeListandCheck()
 Dim X As Integer
 Dim N As Integer
 N = 4
+' In this For Loop, we are looking through the 92 potential spots from the batch list and pulling the Accession numbers using the criteria that they are above 100
+' Numbers that are above 100, which are often the Accession numbers we are trying to compare, are pulled from column D and put in column G.
     For X = 2 To 93
     Set ahsNumbeR = Range("G" & X)
     Set numberPicker = Range("D" & N)
@@ -10,6 +17,8 @@ N = 4
         End If
     N = N + 13
     Next X
+    ' In this For Loop, we compare the barcodes pulled from the batch list (column G) with the barcodes scanned in from the Hamilton (column C)
+    ' For every 92 potential spots, it will check if there are barcodes and if there are, it will then check if they match. A message is printed according to the outcome.
     For I = 2 To 93
     Set patientName = Range("A" & I)
     Set matchCheck = Range("B" & I)
