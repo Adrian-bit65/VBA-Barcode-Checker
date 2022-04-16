@@ -6,7 +6,7 @@
 Sub barcodeListandCheck()
 Dim X As Integer
 Dim N As Integer
-N = 4
+N = 3
 ' In this For Loop, we are looking through the 92 potential spots from the batch list and pulling the Accession numbers using the criteria that they are above 100
 ' Numbers that are above 100, which are often the Accession numbers we are trying to compare, are pulled from column D and put in column G.
     For X = 2 To 93
@@ -15,7 +15,7 @@ N = 4
         If numberPicker > 100 Then
             ahsNumbeR.Value = numberPicker
         End If
-    N = N + 13
+    N = N + 5
     Next X
     ' In this For Loop, we compare the barcodes pulled from the batch list (column G) with the barcodes scanned in from the Hamilton (column C)
     ' For every 92 potential spots, it will check if there are barcodes and if there are, it will then check if they match. A message is printed according to the outcome.
