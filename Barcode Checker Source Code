@@ -58,11 +58,11 @@ N = 3
         End If
     Next I
     If Y > 0 And Y < 25 Then ' Y increases with each mismatch. If there's more than one then we print the mismatches
-        MsgBox Str1, vbOKOnly, "Check Completed"
+        MsgBox Str1, vbCritical, "Check Completed"
     ElseIf Y >= 25 Then ' MsgBox limit is 25 and we rarely get even one mismatch
         MsgBox "Many barcodes don't match. Please check if formatting is correct.", vbExclamation, "Check Completed"
     ElseIf Y = 0 And Z > 0 Then ' If there's no mismatch (Y=0) and there are patients (Z>0)
-        MsgBox "All barcodes match!", vbOKOnly, "Check Completed"
+        MsgBox "All barcodes match!", vbInformation, "Check Completed"
     ElseIf Z = 0 Then ' If there's no patients
         MsgBox "No patients detected. Please check if formatting is correct.", vbExclamation, "Check Completed"
     End If
